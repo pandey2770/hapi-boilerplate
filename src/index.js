@@ -1,7 +1,7 @@
 const Hapi = require('hapi');
 const Good = require('good');
 const Basic = require('hapi-auth-basic');
-const product = require('./models/product');
+const routes = require('./routes');
 const user = require('./models/user');
 
 const server = new Hapi.Server();
@@ -41,23 +41,12 @@ server.register([{
   if (err) {
     throw err;
   }
-
   server.auth.strategy('simple', 'basic', { validateFunc: user.validate });
-
-  server.route({
-    method: 'GET',
-    path: '/product',
-    config: {
-      auth: 'simple',
-      handler: product.fetchProduct,
-    },
-  });
-
+  server.route(routes);
   server.start((errStart) => {
     if (errStart) {
       throw errStart;
     }
-
     console.log(`Server running at: ${server.info.uri}`); // eslint-disable-line no-console
   });
 });
