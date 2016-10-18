@@ -1,52 +1,39 @@
-const Hapi = require('hapi');
+const { Server } = require('hapi');
 const Good = require('good');
 const Basic = require('hapi-auth-basic');
-const routes = require('./routes');
-const user = require('./models/user');
+const Routes = require('./routes');
+const Config = require('./config');
+const { validate } = require('./service/auth');
+const { initialize } = require('./model');
 
-const server = new Hapi.Server();
-server.connection({ port: 3000 });
+const server = new Server();
+server.connection(Config.connOptions);
 
 server.register(require('inert'), (err) => {
   if (err) {
     throw err;
   }
-
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: (request, reply) => {
-      reply.file('./public/index.html');
-    },
-  });
+  server.route(Config.indexRoute);
 });
 
 server.register([{
   register: Good,
-  options: {
-    reporters: {
-      console: [{
-        module: 'good-squeeze',
-        name: 'Squeeze',
-        args: [{
-          response: '*',
-          log: '*',
-        }],
-      }, {
-        module: 'good-console',
-      }, 'stdout'],
-    },
-  },
+  options: Config.loggingOptions,
 }, Basic], (err) => {
   if (err) {
     throw err;
   }
-  server.auth.strategy('simple', 'basic', { validateFunc: user.validate });
-  server.route(routes);
-  server.start((errStart) => {
-    if (errStart) {
-      throw errStart;
-    }
-    console.log(`Server running at: ${server.info.uri}`); // eslint-disable-line no-console
+  initialize
+  .then(() => {
+    server.auth.strategy('simple', 'basic', { validateFunc: validate });
+    server.route(Routes);
+    server.start((errStart) => {
+      if (errStart) {
+        throw errStart;
+      }
+      console.log(`Server running at: ${server.info.uri}`); // eslint-disable-line no-console
+    });
+  }).catch((e) => {
+    throw e;
   });
 });

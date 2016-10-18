@@ -1,4 +1,4 @@
-const product = require('./models/product');
+const product = require('./handler/product');
 
 module.exports = [{
   method: 'GET',

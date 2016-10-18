@@ -1,6 +1,7 @@
 const Bcrypt = require('bcrypt');
 
 const users = {
+  // todo: move user to db
   john: {
     username: 'john',
     password: '$2a$10$iqJSHD.BGr0E2IxQwYgJmeP3NvhPrXAeLSaGCj6IR/XU5QtjVu5Tm',
