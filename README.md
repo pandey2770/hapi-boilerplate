@@ -3,12 +3,11 @@
 A hapi boilerplate for my backend projects.
 
 ## Features
-- Hapi latest version.
-- Authentication using hapi-auth-basic.
-- ORM layer of waterline.
-- Logging using good.
-- Linting with ESlint + airbnb.
+- Authentication using `hapi-auth-basic`.
+- DB integration using `pg`.
+- Logging using `good`.
+- Linting with `ESlint + airbnb`.
 
 ## TODO
-- Authenticating using oAuth.
-- Flow for static type checking.
+- Authenticating using `FB oAuth`.
+- Static type checking using `Flow`.

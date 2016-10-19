@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Learning Hapi",
   "main": "index.js",
-  "author": "Babu",
-  "license": "MIT",
+  "author": "Jyoti",
   "dependencies": {
     "babel-eslint": "^7.0.0",
     "bcrypt": "^0.8.7",
@@ -17,8 +16,7 @@
     "hapi": "^15.1.1",
     "hapi-auth-basic": "^4.2.0",
     "inert": "^4.0.2",
-    "sails-postgresql": "^0.11.4",
-    "waterline": "^0.11.4"
+    "pg": "^6.1.0"
   },
   "scripts": {
     "lint": "eslint ."

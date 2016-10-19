@@ -1,10 +1,10 @@
-const product = require('./handler/product');
+const Product = require('../../handler/product');
 
 module.exports = [{
   method: 'GET',
   path: '/product',
   config: {
     auth: 'simple',
-    handler: product.fetchProduct,
+    handler: Product.getList,
   },
 }];

@@ -1,18 +1,10 @@
-const { getModel } = require('../../model');
+const Product = require('../../model/product');
 
 module.exports = {
-  fetchProduct: (request, reply) => {
-    const product = getModel('product');
-    if (product) {
-      product.find({})
-        .exec((err, data) => {
-          if (err) {
-            throw err;
-          }
-          reply(data);
-        });
-    } else {
-      reply();
-    }
+  getList: (request, reply) => {
+    Product.getList()
+      .then((data) => {
+        reply(data);
+      });
   },
 };
