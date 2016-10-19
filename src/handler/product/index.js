@@ -1,10 +1,8 @@
 const Product = require('../../model/product');
 
 module.exports = {
-  getList: (request, reply) => {
-    Product.getList()
-      .then((data) => {
-        reply(data);
-      });
+  getList: async (request, reply) => {
+    const data = await Product.getList();
+    reply(data);
   },
 };

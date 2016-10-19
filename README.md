@@ -11,3 +11,9 @@ A hapi boilerplate for my backend projects.
 ## TODO
 - Authenticating using `FB oAuth`.
 - Static type checking using `Flow`.
+- Managing db migrations.
+
+## TO RUN
+Execute following steps in root folder of the project
+- yarn
+- babel-node index.js
