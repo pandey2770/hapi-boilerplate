@@ -1,3 +1,5 @@
+// @flow
+
 const { Server } = require('hapi');
 const Good = require('good');
 const Basic = require('hapi-auth-basic');

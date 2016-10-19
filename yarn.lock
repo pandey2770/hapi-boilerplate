@@ -180,6 +180,10 @@ babel-plugin-syntax-async-functions:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
 
+babel-plugin-syntax-flow@^6.8.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-flow/-/babel-plugin-syntax-flow-6.13.0.tgz#9af0cd396087bf7677053e1afa52f206c0416f17"
+
 babel-plugin-transform-es2015-arrow-functions@^6.3.13:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-es2015-arrow-functions/-/babel-plugin-transform-es2015-arrow-functions-6.8.0.tgz#5b63afc3181bdc9a8c4d481b5a4f3f7d7fef3d9d"
@@ -348,6 +352,13 @@ babel-plugin-transform-es2015-unicode-regex@^6.3.13:
     babel-helper-regex "^6.8.0"
     babel-runtime "^6.0.0"
     regexpu-core "^2.0.0"
+
+babel-plugin-transform-flow-strip-types:
+  version "6.14.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-flow-strip-types/-/babel-plugin-transform-flow-strip-types-6.14.0.tgz#35ceb03f8770934044bab1a76f7e4ee0aa9220f9"
+  dependencies:
+    babel-plugin-syntax-flow "^6.8.0"
+    babel-runtime "^6.0.0"
 
 babel-plugin-transform-regenerator, babel-plugin-transform-regenerator@^6.16.0:
   version "6.16.1"

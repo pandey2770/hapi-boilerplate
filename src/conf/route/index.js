@@ -1,3 +1,5 @@
+// @flow
+
 const Product = require('../../handler/product');
 
 module.exports = [{

@@ -1,9 +1,11 @@
+// @flow
+
 module.exports = {
   connOptions: { port: 3000 },
   indexRoute: {
     method: 'GET',
     path: '/',
-    handler: (request, reply) => {
+    handler: (request: Object, reply: Function) => {
       reply.file('./public/index.html');
     },
   },

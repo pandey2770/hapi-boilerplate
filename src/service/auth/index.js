@@ -1,3 +1,5 @@
+// @flow
+
 const Bcrypt = require('bcrypt');
 
 const users = {
@@ -11,7 +13,7 @@ const users = {
 };
 
 module.exports = {
-  validate: (request, username, password, callback) => {
+  validate: (request: Object, username: string, password: string, callback: Function) => {
     const user = users[username];
     if (!user) {
       return callback(null, false);
