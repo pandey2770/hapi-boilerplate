@@ -1,7 +1,7 @@
 const { Server } = require('hapi');
 const Good = require('good');
 const Basic = require('hapi-auth-basic');
-const Route = require('./service/route');
+const Route = require('./conf/route');
 const Config = require('./conf/app-config');
 const Auth = require('./service/auth');
 
