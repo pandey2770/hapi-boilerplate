@@ -7,10 +7,10 @@ A hapi boilerplate for my backend projects.
 - DB integration using `pg`.
 - Logging using `good`.
 - Linting with `ESlint + airbnb`.
+- Static type checking using `Flow`.
 
 ## TODO
 - Authenticating using `FB oAuth`.
-- Static type checking using `Flow`.
 - Managing db migrations.
 
 ## TO RUN
