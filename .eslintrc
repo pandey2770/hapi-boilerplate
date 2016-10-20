@@ -1,8 +1,11 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb-base",
+  "extends": ["airbnb-base", "hapi"],
   "env": {
     "node": true,
     "es6": true
+  },
+  "rules": {
+    "padded-blocks": 0
   }
 }
